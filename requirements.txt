@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+pandas
+scikit-learn
+prometheus-client
+requests
+pytest
+httpx
