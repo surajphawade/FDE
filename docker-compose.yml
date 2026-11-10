@@ -1,0 +1,36 @@
+
+services:
+
+  payment-service:
+    build:
+      context: ./applications/payment-service
+    image: fde-payment-service:v1
+    container_name: fde-payment-container
+    ports:
+      - "8000:8000"
+    networks:
+      - fde-network
+
+  order-service:
+    build:
+      context: ./applications/order-service
+    image: fde-order-service:v1
+    container_name: fde-order-container
+    ports:
+      - "8001:8001"
+    networks:
+      - fde-network
+
+  user-service:
+    build:
+      context: ./applications/user-service
+    image: fde-user-service:v1
+    container_name: fde-user-container
+    ports:
+      - "8002:8002"
+    networks:
+      - fde-network
+
+networks:
+  fde-network:
+    driver: bridge
